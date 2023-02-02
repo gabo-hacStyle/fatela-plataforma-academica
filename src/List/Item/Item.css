@@ -1,0 +1,22 @@
+.Item-container{
+    box-shadow: 1px 1px 12px -6px #0a0a0a;
+}
+.Item-title--container{
+    background-color: aliceblue;
+}
+.Item-title{
+    text-align: center; 
+}
+.Item-content--container{
+    display: flex;
+    padding-left: 4px;
+}
+.Item-content--info{
+    width: 100%;
+}
+p{
+    margin: 0;
+}
+td{
+    width: 165px;
+}
