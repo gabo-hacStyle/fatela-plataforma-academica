@@ -1,0 +1,19 @@
+form {
+    box-shadow: 1px 0px 18px -10px black;
+    padding: 12px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+input, button{
+    margin-top: 15px;
+}
+h1{
+    text-align: center;
+}
+.form-login--container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

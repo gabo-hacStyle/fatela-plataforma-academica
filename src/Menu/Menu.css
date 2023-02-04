@@ -1,0 +1,11 @@
+aside picture img{
+    width: 20px;
+    height: 20px;
+}
+aside {
+    border-radius: 3px;
+    height: 40px;
+    background-color: rgb(144, 231, 231);
+    display: flex;
+    justify-content: space-between;
+}
