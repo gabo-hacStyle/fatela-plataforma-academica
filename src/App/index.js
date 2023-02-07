@@ -1,15 +1,19 @@
-import './App.css';
-//import { Header } from '../Header';
-import { Searcher } from '../Header/Searcher';
-import { Profile } from '../Profile';
-import { List } from '../List';
-import { Item } from '../List/Item';
-import { EvaluacionGrades } from '../List/Item/EvaluacionGrades';
-import { TallerGrades } from '../List/Item/TallerGrades';
 import { Routes, Route, HashRouter } from 'react-router-dom';
-import { LoginPage } from '../LoginPage/index';
-import { Menu } from '../Menu';
-import { courses } from '../data';
+import React from 'react';
+import { LoginPage } from '../LoginPage';
+import { Profile } from '../Profile';
+import {Menu} from '../Menu'
+import { RecordAcademico } from '../RecordAcademico';
+//import { GradesHeader } from '../RecordAcademico/GradesHeader';
+//import { Student } from '../RecordAcademico/GradesHeader/Student';
+//import { Searcher } from '../RecordAcademico/GradesHeader/Searcher'
+import { List } from '../RecordAcademico/List';
+import { Item } from '../RecordAcademico/List/Item';
+import {TallerGrades} from '../RecordAcademico/List/Item/TallerGrades'
+import {EvaluacionGrades} from '../RecordAcademico/List/Item/EvaluacionGrades'
+import {courses} from '../data'
+import './App.css';
+
 
 function App() {
   return (
@@ -17,13 +21,16 @@ function App() {
         <HashRouter>    
             <Menu />
             <Routes>
-                <Route path='/' element={<LoginPage />}>
-                    <Route path=':slug' element={<Profile />}>
+                <Route path='/' element={<LoginPage />} />
+                <Route path='/:slug' element={<Profile />}>
                         <Route path='/:slug/notas' element={
-                            <>
-                                <Profile />
-                                <Searcher />
-                                <List 
+                            <RecordAcademico>
+                                {/*<GradesHeader>
+                                    <Student />
+                                    <Searcher />
+                               </GradesHeader>*/}
+                                
+                               <List 
                                     render={() => courses.map(
                                         (course, index) => (
                                         <Item
@@ -51,10 +58,10 @@ function App() {
                                             key={index}
                                         />)
                                 )}/>
-                            </>
+                            </RecordAcademico>
+                               
                         }/>
                     </Route>
-                </Route>
                 
             </Routes>
         </HashRouter> 

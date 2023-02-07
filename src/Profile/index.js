@@ -1,7 +1,13 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import './Profile.css'
+import { students } from "../data";
 function Profile () {
+    const {slug} = useParams();
+    const person = students.find(student => student.slug === slug)
+
     return (
+        <>
         <div className="Profile-container">
             <figure>
                 <img 
@@ -12,10 +18,23 @@ function Profile () {
                 />
             </figure>
 
-            <h1>Alfredo Murcia</h1>
-
+            <h1>{person.name}</h1>
+            <p> Creditos: {person.credits}</p>
+            <h3>Inscrito en:</h3>
+            <ul>
+                {person.courses.map((course, index) => <li key={index}>{course}</li>)}
+            </ul>
         </div>
+        <AcademicGradesLink person={person} />
+
+        </>
     );
+}
+
+function AcademicGradesLink ({person}) {
+    return(
+        <Link to={`/${person.slug}/notas`}>Coso Academico</Link>
+    )
 }
 
 export {Profile}

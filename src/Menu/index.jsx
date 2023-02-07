@@ -14,11 +14,8 @@ function Menu () {
                 </picture>
                 </NavLink>
             </div>
-            <NavLink
-                to='/Alfredo/notas'
-            >
-               Record Academico
-            </NavLink>
+           
+             
             <NavLink 
                to='/'
             >
