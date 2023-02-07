@@ -6,8 +6,8 @@ function Menu () {
 
     return (
         <aside>
-            {(routes.map(route => (
-                <NavLink to={route.to}>
+            {(routes.map((route) => (
+                <NavLink key={route.name} to={route.to}>
                     <figure>
                     <img 
                         src={route.src} 
@@ -28,7 +28,7 @@ routes.push({
 })
 routes.push({
     to: '/alfredo-murcia/notas',
-    name: 'Logout',
+    name: 'Notas',
     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmk0MsAI3hQrhKR9mra8QKNEEndIa2srGn9clw1fFH&s'
 })
 routes.push({

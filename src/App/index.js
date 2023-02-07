@@ -7,6 +7,7 @@ import { RecordAcademico } from '../RecordAcademico';
 //import { GradesHeader } from '../RecordAcademico/GradesHeader';
 //import { Student } from '../RecordAcademico/GradesHeader/Student';
 //import { Searcher } from '../RecordAcademico/GradesHeader/Searcher'
+import { NavBar } from '../NavBar';
 import { List } from '../RecordAcademico/List';
 import { Item } from '../RecordAcademico/List/Item';
 import {TallerGrades} from '../RecordAcademico/List/Item/TallerGrades'
@@ -19,20 +20,26 @@ function App() {
   return (
     <div className="App">
         <HashRouter>    
-            <Menu />
+            <NavBar />
             <Routes>
                 <Route path='/' element={<LoginPage />} />
-                <Route path='/:slug' element={<Profile />}>
-                        <Route path='/:slug/notas' element={
-                            <RecordAcademico>
-                                {/*<GradesHeader>
-                                    <Student />
-                                    <Searcher />
-                               </GradesHeader>*/}
+                <Route path='/:slug' element={
+                    <>
+                        <Menu />
+                        <Profile />
+                    </>
+                }>
+                    <Route path='/:slug/notas' element={
+                    <>
+                        <RecordAcademico>
+                            {/*<GradesHeader>
+                                <Student />
+                                <Searcher />
+                           </GradesHeader>*/}
                                 
-                               <List 
-                                    render={() => courses.map(
-                                        (course, index) => (
+                            <List 
+                                render={
+                                    () => courses.map((course, index) => (
                                         <Item
                                             nombre={course.nombre}
                                             profesor={course.profesor}
@@ -45,9 +52,8 @@ function App() {
                                                         grades={grade.value}
                                                     />
                                                 ))
-                                            }
-                                            
-                                                evaluacionGrades={ () => 
+                                            }     
+                                            evaluacionGrades={ () => 
                                                 course.examGrades.map((grade, index) => (
                                                     <EvaluacionGrades 
                                                         key={index}
@@ -59,8 +65,9 @@ function App() {
                                         />)
                                 )}/>
                             </RecordAcademico>
-                               
-                        }/>
+    
+                    </>                               
+                    }/>
                     </Route>
                 
             </Routes>

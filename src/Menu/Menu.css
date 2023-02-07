@@ -13,5 +13,5 @@ aside {
     width: 10%;
     position: fixed;
     z-index: 1;
-    overflow: auto;
+    overflow: hidden;
 }
