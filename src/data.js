@@ -17,6 +17,16 @@ const students = [
         ],
         credits: '05/20',
         slug: 'diega-forlan'
+    },
+    {
+        name: 'Alex Fajardo',
+        courses: [
+            'Inteligencia Artificial',
+            'Driving avanzado',
+            'Maquetacion hidrahulica'
+        ],
+        credits: '05/08',
+        slug: 'alex-fajardo'
 
     }
 

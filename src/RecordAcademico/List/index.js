@@ -3,7 +3,7 @@ import './List.css'
 function List (props) {
 
     return (
-        <div className="List-container">
+        <div className="list-container">
             <ul>
                 <li>{props.render()}</li>
             </ul>

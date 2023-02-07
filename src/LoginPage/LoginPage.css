@@ -1,4 +1,8 @@
+#welcome{
+    margin: 0;
+}
 form {
+    overflow: hidden;
     box-shadow: 1px 0px 18px -10px black;
     padding: 12px;
     width: 30%;
@@ -10,6 +14,8 @@ input, button{
     margin-top: 15px;
 }
 h1{
+    margin: 0;
+    padding: 20px;
     text-align: center;
 }
 .form-login--container{
