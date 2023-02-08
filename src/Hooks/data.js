@@ -9,7 +9,7 @@ const students = [
         slug: 'alfredo-murcia'
     },
     {
-        name: 'Diega Forlan',
+        name: 'Diego Papaya',
         courses: [
             'Licenciatura en biblia',
             'Inteligencia Artificial',
@@ -33,7 +33,7 @@ const students = [
 ]
 const courses = [
     {
-        nombre: 'Curso 1',
+        nombre: 'Oftamología',
         profesor: 'Mauro',
         programa: 'Maestria en I.A',
         workGrades: [
@@ -63,7 +63,7 @@ const courses = [
         ],
     },
     {
-        nombre: 'Curso 2',
+        nombre: 'Pedagogia',
         profesor: 'Mauro',
         programa: 'Maestria en I.A',
         workGrades: [
@@ -90,7 +90,7 @@ const courses = [
         ],
     },
     {
-        nombre: 'Curso 3',
+        nombre: 'Financiacion',
         profesor: 'Mauro',
         programa: 'Maestria en I.A',
         workGrades: [

@@ -1,13 +1,20 @@
 import React from "react";
 import './LoginForm.css'
 import { useNavigate } from 'react-router-dom'
+import { students } from "../../../Hooks/data";
 
 function LoginForm () {
-    const navigate = useNavigate()
-    const [user, setUser] = React.useState('');
-    const userRegistration = (event) => {
-        return setUser(event.target.value)
-    }
+    const navigate = useNavigate();
+    const [user, setUser] = React.useState('')
+    const verification = () =>
+     (students.findIndex((student) => {
+        if(student.name === user) {
+            navigate('/'+ student.slug)
+        } else {
+            //alert('Usuario incorrecto')
+            setUser('');
+        }
+    }));
     return (
         <> 
             <div id="welcome">
@@ -19,10 +26,10 @@ function LoginForm () {
                 <input 
                     placeholder="Usuario" 
                     type="text"
-                    onChange={userRegistration}    
+                    onChange={(event) => setUser(event.target.value)}    
                 />
                 <input placeholder="Contraseña" type="password" name="" id="" />
-                <button onClick={() => navigate('/alfredo-murcia/')}>Entrar</button>
+                <button onClick={verification}>Entrar</button>
                </form>
             </div>            
         </>
