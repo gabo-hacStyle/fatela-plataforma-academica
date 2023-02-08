@@ -1,6 +1,5 @@
 import React from "react";
 import './Item.css'
-//import { EvaluacionGrades } from "./EvaluacionGrades";
 
 function Item (props) {
     return (

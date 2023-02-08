@@ -1,0 +1,30 @@
+.profile-container{
+    box-shadow: 1px 0 12px -6px #a0a0a0;
+    width: 86.3%;
+    padding: 8px;
+    margin: 65px auto 10px;
+    border-radius: 3px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+figure{
+    margin: .3em 0;
+}
+h1{
+    font-size: 1.5em;
+}
+.profile-data{
+    justify-content: space-evenly;
+}
+h3{
+    font-size: .96em;
+    margin: 6px 0 2px 0 ;
+}
+p, ul{
+    margin: 0;
+}
+ul{
+    padding: 0;
+}

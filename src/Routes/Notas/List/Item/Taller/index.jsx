@@ -1,8 +1,8 @@
 import React from "react";
 
-function TallerGrades (props) {
+function Taller (props) {
     return (
         <td>{props.grades}</td>
     );
 }
-export {TallerGrades}
+export {Taller}

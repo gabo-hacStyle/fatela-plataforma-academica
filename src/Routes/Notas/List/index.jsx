@@ -4,7 +4,7 @@ function List (props) {
 
     return (
         <div className="list-container">
-            <ul>
+            <ul className="courses">
                 <li>{props.render()}</li>
             </ul>
         </div>

@@ -1,8 +1,8 @@
 import React from "react";
 
-function EvaluacionGrades ({grades}) {
+function Evaluacion ({grades}) {
     return (
         <td>{grades}</td>
     );
 }
-export{EvaluacionGrades}
+export{Evaluacion}
