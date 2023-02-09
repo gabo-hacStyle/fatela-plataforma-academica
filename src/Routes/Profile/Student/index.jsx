@@ -3,7 +3,8 @@ import { Outlet, useParams } from "react-router-dom";
 import './Student.css'
 import { students } from "../../../Hooks/data";
 function Student () {
-    const {slug} = useParams();
+    const {slug} = useParams()
+    console.log(slug)
     const person = students.find(student => student.slug === slug)
 
     return (
@@ -25,7 +26,7 @@ function Student () {
                     <div>
                         <h3>Inscrito en:</h3>
                         <ul>
-                            {person.courses.map((course, index) => <li key={index}>- {course}</li>)}
+                            {person.courses.map((course, index) => <li key={index}>- {course.nombre}</li>)}
                         </ul>
                     </div>
                     <div>
