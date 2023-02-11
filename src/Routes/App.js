@@ -4,6 +4,7 @@ import { Profile } from './Profile';
 import {Notas} from './Notas/index'
 import { NavBar } from '../NavBar';
 import { usePlatform } from '../Hooks/usePlatform';
+import { Menu } from './Profile/Menu';
 
 function App() {
   const {slug, setSlug} = usePlatform();
@@ -12,8 +13,20 @@ function App() {
         <BrowserRouter>    
             <NavBar />
             <Routes>
-                <Route path='/' element={<LoginPage slug={slug} setSlug={setSlug}/>} />
-                <Route path='/:slug' element={<Profile />}>
+                <Route path='/' 
+                  element={
+                    <LoginPage 
+                      slug={slug} 
+                      submitEvent={(newSlugValue) => setSlug(newSlugValue)}
+                    />} 
+                />
+                <Route path='/:slug' 
+                    element={
+                      <Profile>
+                          <Menu setSlug={setSlug}/>
+                      </Profile>
+              
+                }>
                     <Route path='/:slug/notas' element={<Notas />}/>
                 </Route>
             </Routes>

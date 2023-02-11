@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import './Menu.css'
 
-function Menu () {
+function Menu ({setSlug}) {
     const { slug }= useParams();
     console.log(slug)
     const navigate = useNavigate();
@@ -18,9 +18,10 @@ function Menu () {
                 }
             >📝</button>
             <button className='logout-button'
-                onClick={() =>
+                onClick={() => {
                     navigate('/')
-                }
+                    setSlug('');
+                }}
             >🔐</button>
         </aside>
     )

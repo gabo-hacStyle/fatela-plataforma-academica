@@ -3,7 +3,7 @@ import './LoginPage.css'
 import { useNavigate } from 'react-router-dom'
 import { students } from "../../Hooks/data";
 
-function LoginPage ({slug, setSlug}) {
+function LoginPage ({submitEvent, slug}) {
     //Para que nos lleve a la pagina correspondiente
     const navigate = useNavigate();
     //Estado Local para el usuario 
@@ -13,14 +13,16 @@ function LoginPage ({slug, setSlug}) {
     const onChange = (event) => setUser(event.target.value);
     
     //Funcion para verificar buscar el user 
-    const verify = students.find((student) => student.name.includes(user))
+    const verify = students.find((student) => student.name === user)
     //función al llenar el formulario para verificar si el user existe
+    
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(user)
         if(!!verify){
-            setSlug(verify.slug)
-            navigate('/' + slug)
+            console.log(user)
+            console.log(verify.slug)
+            submitEvent(verify.slug)
+            navigate('/' + slug) 
         } else{
             console.log('User incorrecto');
             setUser('')
@@ -35,7 +37,7 @@ function LoginPage ({slug, setSlug}) {
             <div>Usuarios para probar:
                 <ul>
                     <li>Alfredo Murcia</li>
-                    <li> Diego</li>
+                    <li> Diego Papaya</li>
                     <li>Alex Fajardo</li>
                     <li>Gabo</li>
                 </ul>
@@ -49,7 +51,7 @@ function LoginPage ({slug, setSlug}) {
                     onChange={onChange} 
                 />
                 <input placeholder="Contraseña" type="password" name="" id="" />
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
                </form>
             </div>            
         </>

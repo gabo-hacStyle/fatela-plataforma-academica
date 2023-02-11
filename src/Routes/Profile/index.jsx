@@ -1,11 +1,10 @@
 import React from "react";
-import {Menu} from './Menu/index'
 import { Student } from "./Student";
 
-function Profile () {
+function Profile (props) {
     return (
         <>
-            <Menu />
+            {props.children}
             <Student /> 
         </>
     );
