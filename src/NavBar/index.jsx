@@ -1,7 +1,9 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import  './NavBar.css'
 function NavBar () {
     return (
+        <>
             <nav>
                 <div className="logo">
                     FATELA 
@@ -10,6 +12,8 @@ function NavBar () {
                     Record Académico 📓
                 </div>
             </nav>
+            <Outlet />
+        </>
     )
 }
 

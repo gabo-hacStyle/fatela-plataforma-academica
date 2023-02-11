@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import './Student.css'
 import { students } from "../../../Hooks/data";
 function Student () {
@@ -38,7 +38,6 @@ function Student () {
                 </div>
                 </div>
             </div>
-            <Outlet />
         </div>
         </>
     );

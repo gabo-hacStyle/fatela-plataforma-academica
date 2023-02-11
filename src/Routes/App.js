@@ -11,23 +11,23 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter>    
-            <NavBar />
-            <Routes>
-                <Route path='/' 
-                  element={
-                    <LoginPage 
-                      slug={slug} 
-                      submitEvent={(newSlugValue) => setSlug(newSlugValue)}
-                    />} 
-                />
-                <Route path='/:slug' 
+          <Routes>
+                <Route path='/' element={<NavBar />} >
+                  <Route index
+                    element={
+                      <LoginPage 
+                        slug={slug} 
+                        submitEvent={(newSlugValue) => setSlug(newSlugValue)}
+                      />} 
+                  />
+                  <Route path='/:slug' 
                     element={
                       <Profile>
                           <Menu setSlug={setSlug}/>
                       </Profile>
-              
-                }>
+                    }>
                     <Route path='/:slug/notas' element={<Notas />}/>
+                  </Route>
                 </Route>
             </Routes>
         </BrowserRouter> 
