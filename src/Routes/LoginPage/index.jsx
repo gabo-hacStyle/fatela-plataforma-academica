@@ -2,6 +2,7 @@ import React from "react";
 import './LoginPage.css'
 import { useNavigate } from 'react-router-dom'
 import { students } from "../../Hooks/data";
+import { ErrorPage } from "./Error";
 
 function LoginPage ({submitEvent, slug}) {
     //Para que nos lleve a la pagina correspondiente
@@ -24,8 +25,9 @@ function LoginPage ({submitEvent, slug}) {
             submitEvent(verify.slug)
             navigate('/' + slug) 
         } else{
-            console.log('User incorrecto');
             setUser('')
+            console.log('Error')
+            return (<ErrorPage />)
         }
     }
 
@@ -52,6 +54,7 @@ function LoginPage ({submitEvent, slug}) {
                 />
                 <input placeholder="Contraseña" type="password" name="" id="" />
                 <button type="submit">Entrar</button>
+                
                </form>
             </div>            
         </>
