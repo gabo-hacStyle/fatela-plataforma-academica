@@ -2,7 +2,7 @@ import React from "react";
 import './LoginPage.css'
 import { useNavigate } from 'react-router-dom'
 import { students } from "../../Hooks/data";
-import { ErrorPage } from "./Error";
+//import { ErrorPage } from "./Error";
 
 function LoginPage ({submitEvent, slug}) {
     //Para que nos lleve a la pagina correspondiente
@@ -27,7 +27,6 @@ function LoginPage ({submitEvent, slug}) {
         } else{
             setUser('')
             console.log('Error')
-            return (<ErrorPage />)
         }
     }
 
