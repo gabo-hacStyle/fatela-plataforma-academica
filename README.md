@@ -2,7 +2,7 @@
 
 This is the frontend side of an academic platform made to a particular organization. Built with JavaScript. Still in development
 
-##The Platform
+## The Platform
 At first glance, there is going to be a login page where you got to login to your account. After you are in, you will be able to se your profile and
 the programs you are in. Also, there's a menu bar to navigate either to the grades page, get back to the profile page or logout. 
 Also I'm looking forward to program the auth process for different users: 
