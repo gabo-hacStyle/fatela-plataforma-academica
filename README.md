@@ -1,4 +1,4 @@
-#Academic Platform
+# Academic Platform
 
 This is the frontend side of an academic platform made to a particular organization. Built with JavaScript. Still in development
 
